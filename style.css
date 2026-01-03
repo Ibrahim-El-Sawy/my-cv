@@ -1,0 +1,417 @@
+/* =========================================
+   1. Variables & Reset
+   ========================================= */
+:root {
+    --primary-color: #1DA1F2; /* Requested Accent */
+    --primary-dark: #0c85d0;
+    --text-color: #334155;
+    --heading-color: #0f172a;
+    --bg-color: #ffffff;
+    --bg-alt: #f8fafc;
+    --border-color: #e2e8f0;
+    --white: #ffffff;
+    --font-main: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    --container-width: 1100px;
+    --transition: all 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-main);
+    color: var(--text-color);
+    line-height: 1.6;
+    background-color: var(--bg-color);
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: var(--transition);
+}
+
+ul {
+    list-style: none;
+}
+
+/* =========================================
+   2. Layout Utilities
+   ========================================= */
+.container {
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.section {
+    padding: 80px 0;
+}
+
+.bg-alt {
+    background-color: var(--bg-alt);
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.section-heading {
+    font-size: 2rem;
+    color: var(--heading-color);
+    margin-bottom: 40px;
+    position: relative;
+    display: inline-block;
+}
+
+.section-heading::after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 3px;
+    background-color: var(--primary-color);
+    margin-top: 8px;
+    border-radius: 2px;
+}
+
+/* =========================================
+   3. Navigation
+   ========================================= */
+.navbar {
+    background-color: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    padding: 15px 0;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--heading-color);
+}
+
+.logo .dot {
+    color: var(--primary-color);
+}
+
+.nav-links {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+}
+
+.nav-links a {
+    font-weight: 500;
+    font-size: 0.95rem;
+    color: var(--text-color);
+}
+
+.nav-links a:hover {
+    color: var(--primary-color);
+}
+
+.btn-contact {
+    background-color: var(--primary-color);
+    color: var(--white) !important;
+    padding: 8px 20px;
+    border-radius: 50px;
+    font-weight: 600;
+}
+
+.btn-contact:hover {
+    background-color: var(--primary-dark);
+    transform: translateY(-2px);
+}
+
+/* =========================================
+   4. Hero Section
+   ========================================= */
+.hero {
+    padding: 100px 0 80px;
+    text-align: center;
+}
+
+.hero-name {
+    font-size: 3.5rem;
+    color: var(--heading-color);
+    margin-bottom: 10px;
+    letter-spacing: -1px;
+}
+
+.hero-title {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    font-weight: 500;
+    margin-bottom: 30px;
+}
+
+.contact-info {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+    font-size: 0.95rem;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--text-color);
+}
+
+.contact-item svg {
+    color: var(--primary-color);
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.social-links a {
+    font-weight: 600;
+    border-bottom: 2px solid transparent;
+}
+
+.social-links a:hover {
+    color: var(--primary-color);
+    border-bottom-color: var(--primary-color);
+}
+
+/* =========================================
+   5. About Section
+   ========================================= */
+.about-text {
+    max-width: 800px;
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+/* =========================================
+   6. Experience (Timeline)
+   ========================================= */
+.timeline {
+    max-width: 800px;
+}
+
+.timeline-item {
+    margin-bottom: 40px;
+    padding-left: 20px;
+    border-left: 2px solid var(--border-color);
+}
+
+.timeline-item:last-child {
+    margin-bottom: 0;
+}
+
+.timeline-header {
+    margin-bottom: 10px;
+}
+
+.timeline-header h4 {
+    font-size: 1.2rem;
+    color: var(--heading-color);
+}
+
+.timeline-header .company {
+    font-weight: 600;
+    color: var(--primary-color);
+    margin-right: 10px;
+}
+
+.timeline-header .date {
+    font-size: 0.9rem;
+    color: #64748b;
+}
+
+.timeline-content ul {
+    list-style: disc;
+    margin-left: 20px;
+    margin-top: 10px;
+}
+
+.timeline-content li {
+    margin-bottom: 5px;
+}
+
+/* =========================================
+   7. Education
+   ========================================= */
+.education-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--bg-alt);
+    padding: 25px;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    max-width: 800px;
+}
+
+.edu-details h4 {
+    font-size: 1.2rem;
+    color: var(--heading-color);
+    margin-bottom: 5px;
+}
+
+.edu-details .institution {
+    color: var(--text-color);
+}
+
+.grad-year {
+    font-weight: 700;
+    color: var(--primary-color);
+    font-size: 1.1rem;
+}
+
+/* =========================================
+   8. Skills
+   ========================================= */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.skill-category h4 {
+    margin-bottom: 15px;
+    color: var(--heading-color);
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 10px;
+}
+
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.tags span {
+    background-color: var(--white);
+    border: 1px solid var(--border-color);
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: var(--transition);
+}
+
+.tags span:hover {
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+    background-color: rgba(29, 161, 242, 0.05);
+}
+
+/* =========================================
+   9. Projects
+   ========================================= */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.project-card {
+    background: var(--white);
+    border: 1px solid var(--border-color);
+    padding: 25px;
+    border-radius: 8px;
+    transition: var(--transition);
+    display: flex;
+    flex-direction: column;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    border-color: var(--primary-color);
+}
+
+.project-card h4 {
+    font-size: 1.25rem;
+    color: var(--heading-color);
+    margin-bottom: 10px;
+}
+
+.project-card p {
+    font-size: 0.95rem;
+    margin-bottom: 20px;
+    flex-grow: 1;
+}
+
+.project-links a {
+    font-weight: 600;
+    color: var(--primary-color);
+    font-size: 0.9rem;
+}
+
+.project-links a:hover {
+    text-decoration: underline;
+}
+
+/* =========================================
+   10. Footer
+   ========================================= */
+footer {
+    background-color: var(--heading-color);
+    color: #94a3b8;
+    padding: 40px 0;
+    margin-top: 40px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-socials {
+    display: flex;
+    gap: 20px;
+}
+
+.footer-socials a:hover {
+    color: var(--white);
+}
+
+/* =========================================
+   11. Responsive Design (Mobile)
+   ========================================= */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none; /* Simple hide for mobile, ideally use a hamburger menu */
+    }
+    
+    .hero-name {
+        font-size: 2.5rem;
+    }
+    
+    .education-card {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+    
+    .footer-content {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+    }
+}
